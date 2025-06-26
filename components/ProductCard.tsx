@@ -24,11 +24,11 @@ export function ProductCard({ product }: ProductCardProps) {
   const isHoodieDiscounted = product.name === 'Hoodie Blue Jean' || product.name === 'Hoodie Blue Denim';
   const isGrisDiscounted = product.name === 'Thunder T-shirt Gris';
   const oldPrice = 249;
-  const discountedPrice = 159;
+  const discountedPrice = 149;
   const hoodieOldPrice = 389;
   const hoodieDiscountedPrice = 299;
   const grisOldPrice = 299;
-  const grisDiscountedPrice = 199;
+  const grisDiscountedPrice = 179;
 
   // Define available sizes for each product
   const getAvailableSizes = (productName: string) => {

@@ -54,7 +54,7 @@ export const products: Product[] = [
     id: '5',
     name: 'Thunder T-shirt Gris',
     description: 'T-shirt Thunder gris avec branding Amoon rétro. Look classique avec confort moderne.',
-    price: 199,
+    price: 179,
     image: 'https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?w=500&h=600&fit=crop',
     images: [
       'https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?w=500&h=600&fit=crop',
