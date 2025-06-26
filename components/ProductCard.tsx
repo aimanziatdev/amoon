@@ -28,7 +28,7 @@ export function ProductCard({ product }: ProductCardProps) {
   const hoodieOldPrice = 389;
   const hoodieDiscountedPrice = 299;
   const grisOldPrice = 299;
-  const grisDiscountedPrice = 179;
+  const grisDiscountedPrice = 189;
 
   // Define available sizes for each product
   const getAvailableSizes = (productName: string) => {
