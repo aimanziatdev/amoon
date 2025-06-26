@@ -14,7 +14,7 @@ export interface Product {
 export const products: Product[] = [
   {
     id: '1',
-    name: 'TT Black',
+    name: 'Thunder T-shirt Black',
     description: 'T-shirt Thunder en coton premium noir avec le logo Amoon. Confortable et élégant pour un usage quotidien.',
     price: 149,
     image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500&h=600&fit=crop',
@@ -33,7 +33,7 @@ export const products: Product[] = [
   },
   {
     id: '3',
-    name: 'TT White',
+    name: 'Thunder T-shirt White',
     description: 'T-shirt Thunder blanc avec design unique Amoon. Parfait pour faire une déclaration de style.',
     price: 149,
     image: 'https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=500&h=600&fit=crop',
@@ -52,7 +52,7 @@ export const products: Product[] = [
   },
   {
     id: '5',
-    name: 'TT Gris',
+    name: 'Thunder T-shirt Gris',
     description: 'T-shirt Thunder gris avec branding Amoon rétro. Look classique avec confort moderne.',
     price: 199,
     image: 'https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?w=500&h=600&fit=crop',

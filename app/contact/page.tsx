@@ -7,17 +7,16 @@ import { MessageCircle, Mail, MapPin, Phone, Send } from 'lucide-react'
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
-    email: '',
     subject: '',
     message: ''
   })
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Here you would typically send the form data to your backend
-    // For now, we'll just show an alert
-    alert('Merci pour votre message ! Nous vous répondrons bientôt.')
-    setFormData({ name: '', email: '', subject: '', message: '' })
+    e.preventDefault();
+    const { name, subject, message } = formData;
+    const whatsappMessage = `Nom: ${name}\nSujet: ${subject}\nMessage: ${message}`;
+    const whatsappUrl = `https://wa.me/212634889422?text=${encodeURIComponent(whatsappMessage)}`;
+    window.open(whatsappUrl, '_blank');
   }
 
   const handleWhatsAppContact = () => {
@@ -66,21 +65,6 @@ export default function Contact() {
                   required
                   className="input-field"
                   placeholder="Votre nom complet"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  Adresse Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  required
-                  className="input-field"
-                  placeholder="votre.email@exemple.com"
                 />
               </div>
 
@@ -161,7 +145,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 dark:text-white">Email</h3>
-                    <p className="text-gray-600 dark:text-gray-400">info@amoon.com</p>
+                    <p className="text-gray-600 dark:text-gray-400">amoonfashionstore@gmail.com</p>
                     <p className="text-sm text-gray-500">Nous répondrons sous 24h</p>
                   </div>
                 </div>

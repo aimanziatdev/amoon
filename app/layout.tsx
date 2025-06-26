@@ -7,7 +7,7 @@ import { CartProvider } from '@/components/CartProvider'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Amoon Store - Fashion & Style',
+  title: 'a-moon. - Fashion & Style',
   description: 'Discover the latest fashion trends at Amoon Store. Premium clothing, accessories, and style for every occasion.',
   keywords: 'fashion, clothing, style, amoon, store, boutique',
 }

@@ -3,20 +3,26 @@
 import { Header } from '@/components/Header'
 import { useCart } from '@/components/CartProvider'
 import { Trash2, Minus, Plus, MessageCircle, Zap } from 'lucide-react'
+import { useState } from 'react'
 
 export default function Cart() {
   const { items, removeFromCart, updateQuantity, totalPrice, clearCart } = useCart()
+  const [name, setName] = useState('')
+  const [city, setCity] = useState('')
+  const [phone, setPhone] = useState('')
+  const [error, setError] = useState('')
 
   const handleWhatsAppOrder = () => {
     if (items.length === 0) return
-
+    if (!name || !city || !phone) {
+      setError('Veuillez remplir votre nom, ville et numéro de téléphone.')
+      return
+    }
+    setError('')
     const orderDetails = items.map(item => 
       `${item.name} (Taille: ${item.size}, Qté: ${item.quantity}) - ${(item.price * item.quantity).toFixed(2)} DH`
     ).join('\n')
-
-    // Darija message
-    const message = `Salam! Nakhed had lproduit :\n\n${orderDetails}\n\nTotal : ${totalPrice.toFixed(2)} DH\n\n3afak tconfirmi lia w t3ayet lia bash nkemlou l'achat.`
-
+    const message = `Salam! bghit Nakhed had lproduit :\n\n${orderDetails}\n\nTotal : ${totalPrice.toFixed(2)} DH\nNom: ${name}\nVille: ${city}\nTéléphone: ${phone}\nmerci!`
     const whatsappUrl = `https://wa.me/212634889422?text=${encodeURIComponent(message)}`
     window.open(whatsappUrl, '_blank')
   }
@@ -68,9 +74,9 @@ export default function Cart() {
                 
                 <div className="space-y-6">
                   {items.map((item, index) => (
-                    <div key={`${item.id}-${item.size}-${index}`} className="flex items-center space-x-4 p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                    <div key={`${item.id}-${item.size}-${index}`} className="flex flex-col sm:flex-row sm:items-center sm:space-x-4 space-y-2 sm:space-y-0 p-3 sm:p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
                       {/* Product Image */}
-                      <div className="relative w-20 h-20 flex-shrink-0 rounded-md overflow-hidden">
+                      <div className="relative w-24 h-24 sm:w-20 sm:h-20 flex-shrink-0 rounded-md overflow-hidden mx-auto sm:mx-0">
                         <img 
                           src={item.image} 
                           alt={item.name}
@@ -79,7 +85,7 @@ export default function Cart() {
                       </div>
 
                       {/* Product Details */}
-                      <div className="flex-1 min-w-0">
+                      <div className="flex-1 min-w-0 text-center sm:text-left">
                         <h3 className="text-lg font-medium text-gray-900 dark:text-white">
                           {item.name}
                         </h3>
@@ -92,7 +98,7 @@ export default function Cart() {
                       </div>
 
                       {/* Quantity Controls */}
-                      <div className="flex items-center space-x-2">
+                      <div className="flex items-center justify-center space-x-2">
                         <button
                           onClick={() => updateQuantity(item.id, item.size, item.quantity - 1)}
                           className="w-8 h-8 rounded-md border border-gray-300 dark:border-gray-600 flex items-center justify-center hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors"
@@ -111,7 +117,7 @@ export default function Cart() {
                       </div>
 
                       {/* Item Total */}
-                      <div className="text-right">
+                      <div className="text-center sm:text-right">
                         <p className="text-lg font-bold text-primary-600">
                           {(item.price * item.quantity).toFixed(2)} DH
                         </p>
@@ -120,7 +126,7 @@ export default function Cart() {
                       {/* Remove Button */}
                       <button
                         onClick={() => removeFromCart(item.id, item.size)}
-                        className="p-2 text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-md transition-colors duration-200"
+                        className="p-2 text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-md transition-colors duration-200 mx-auto sm:mx-0"
                       >
                         <Trash2 className="w-5 h-5" />
                       </button>
@@ -149,6 +155,42 @@ export default function Cart() {
               </h2>
 
               <div className="space-y-4 mb-6">
+                {/* Name Input */}
+                <div>
+                  <label className="block text-gray-700 dark:text-gray-300 mb-1" htmlFor="name">Nom</label>
+                  <input
+                    id="name"
+                    type="text"
+                    value={name}
+                    onChange={e => setName(e.target.value)}
+                    className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 dark:bg-gray-900 dark:text-white"
+                    placeholder="Votre nom"
+                  />
+                </div>
+                {/* City Input */}
+                <div>
+                  <label className="block text-gray-700 dark:text-gray-300 mb-1" htmlFor="city">Ville</label>
+                  <input
+                    id="city"
+                    type="text"
+                    value={city}
+                    onChange={e => setCity(e.target.value)}
+                    className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 dark:bg-gray-900 dark:text-white"
+                    placeholder="Votre ville"
+                  />
+                </div>
+                {/* Phone Input */}
+                <div>
+                  <label className="block text-gray-700 dark:text-gray-300 mb-1" htmlFor="phone">Numéro de téléphone</label>
+                  <input
+                    id="phone"
+                    type="tel"
+                    value={phone}
+                    onChange={e => setPhone(e.target.value)}
+                    className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 dark:bg-gray-900 dark:text-white"
+                    placeholder="Votre numéro de téléphone"
+                  />
+                </div>
                 <div className="flex justify-between">
                   <span className="text-gray-600 dark:text-gray-400">Sous-total</span>
                   <span className="text-gray-900 dark:text-white font-medium">
@@ -170,6 +212,11 @@ export default function Cart() {
               </div>
 
               {/* WhatsApp Order Button */}
+              {error && (
+                <div className="mb-4 text-red-600 bg-red-50 dark:bg-red-900/30 p-2 rounded">
+                  {error}
+                </div>
+              )}
               <button
                 onClick={handleWhatsAppOrder}
                 className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2"

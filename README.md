@@ -184,7 +184,7 @@ This project is licensed under the MIT License.
 
 For support or questions:
 - WhatsApp: +212 634889422
-- Email: info@amoon.com
+- Email: amoonfashionstore@gmail.com
 
 ---
 

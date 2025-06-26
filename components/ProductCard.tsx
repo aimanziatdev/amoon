@@ -19,10 +19,10 @@ export function ProductCard({ product }: ProductCardProps) {
   const [showAddedNotification, setShowAddedNotification] = useState(false)
   const { addToCart } = useCart()
 
-  // Determine if product is TT Black or TT White for discount
-  const isDiscounted = product.name === 'TT Black' || product.name === 'TT White';
+  // Determine if product is Thunder T-shirt Black or Thunder T-shirt White for discount
+  const isDiscounted = product.name === 'Thunder T-shirt Black' || product.name === 'Thunder T-shirt White';
   const isHoodieDiscounted = product.name === 'Hoodie Blue Jean' || product.name === 'Hoodie Blue Denim';
-  const isGrisDiscounted = product.name === 'TT Gris';
+  const isGrisDiscounted = product.name === 'Thunder T-shirt Gris';
   const oldPrice = 249;
   const discountedPrice = 159;
   const hoodieOldPrice = 389;
@@ -33,9 +33,9 @@ export function ProductCard({ product }: ProductCardProps) {
   // Define available sizes for each product
   const getAvailableSizes = (productName: string) => {
     switch (productName) {
-      case 'TT Black':
-      case 'TT White':
-      case 'TT Gris':
+      case 'Thunder T-shirt Black':
+      case 'Thunder T-shirt White':
+      case 'Thunder T-shirt Gris':
         return ['M', 'L', 'XL']; // Only M, L, XL available for T-shirts
       case 'Hoodie Blue Jean':
       case 'Hoodie Blue Denim':
