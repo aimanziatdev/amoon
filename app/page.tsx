@@ -12,20 +12,20 @@ export default function Home() {
       <Header />
       
       {/* Hero Section with Thunder Background */}
-      <section className="w-full py-12 md:h-[500px] flex items-center justify-center overflow-hidden thunder-gradient">
-        <div className="w-full flex flex-col items-center justify-center text-center bg-gradient-to-r from-thunder-900/80 via-thunder-800/70 to-primary-900/80 z-10">
+      <section className="w-full py-12 md:h-[500px] flex items-center justify-center overflow-hidden bg-white dark:thunder-gradient">
+        <div className="w-full flex flex-col items-center justify-center text-center bg-white dark:bg-gradient-to-r dark:from-thunder-900/80 dark:via-thunder-800/70 dark:to-primary-900/80 z-10">
           {/* Red Crescent Moon Icon */}
           <div className="mb-4 flex justify-center">
             <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M28 6a22 22 0 1 0 0 44c.5 0 1-.02 1.5-.06A18 18 0 1 1 28 6z" fill="#ef4444"/>
             </svg>
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white drop-shadow-lg">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-black dark:text-white drop-shadow-lg">
             Bienvenue chez <span className="thunder-text">a-moon.</span>
           </h1>
-          <p className="text-xl md:text-2xl mb-8 text-primary-100 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl mb-8 text-black dark:text-primary-100 max-w-3xl mx-auto">
             Découvrez les dernières tendances de la mode et des vêtements de qualité premium.<br/>
-            <span className="font-semibold">Silent as the moon, bold as thunder.</span>
+            <span className="font-semibold text-black dark:text-white">Silent as the moon, bold as thunder.</span>
           </p>
           <div className="flex flex-col gap-4 justify-center mt-6 w-full max-w-xs mx-auto sm:flex-row sm:max-w-none">
             <Link href="/collections" className="btn-primary flex items-center justify-center w-full sm:w-auto min-w-[180px] text-base font-semibold">
