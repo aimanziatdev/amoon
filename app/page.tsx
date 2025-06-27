@@ -12,8 +12,8 @@ export default function Home() {
       <Header />
       
       {/* Hero Section with Thunder Background */}
-      <section className="relative w-full h-[400px] md:h-[500px] flex items-center justify-center overflow-hidden thunder-gradient">
-        <div className="absolute inset-0 bg-gradient-to-r from-thunder-900/80 via-thunder-800/70 to-primary-900/80 z-10 flex flex-col items-center justify-center text-center">
+      <section className="w-full py-12 md:h-[500px] flex items-center justify-center overflow-hidden thunder-gradient">
+        <div className="w-full flex flex-col items-center justify-center text-center bg-gradient-to-r from-thunder-900/80 via-thunder-800/70 to-primary-900/80 z-10">
           {/* Red Crescent Moon Icon */}
           <div className="mb-4 flex justify-center">
             <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -27,12 +27,12 @@ export default function Home() {
             Découvrez les dernières tendances de la mode et des vêtements de qualité premium.<br/>
             <span className="font-semibold">Silent as the moon, bold as thunder.</span>
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-6">
-            <Link href="/collections" className="btn-primary flex items-center justify-center min-w-[180px] text-base font-semibold">
+          <div className="flex flex-col gap-4 justify-center mt-6 w-full max-w-xs mx-auto sm:flex-row sm:max-w-none">
+            <Link href="/collections" className="btn-primary flex items-center justify-center w-full sm:w-auto min-w-[180px] text-base font-semibold">
               Acheter Maintenant
               <ArrowRight className="w-5 h-5 ml-2" />
             </Link>
-            <Link href="/contact" className="btn-secondary flex items-center justify-center min-w-[180px] text-base font-semibold border border-primary-500 dark:border-primary-400 bg-white dark:bg-thunder-900 text-primary-500 dark:text-primary-400 hover:bg-primary-50 dark:hover:bg-thunder-800">
+            <Link href="/contact" className="btn-secondary flex items-center justify-center w-full sm:w-auto min-w-[180px] text-base font-semibold border border-primary-500 dark:border-primary-400 bg-white dark:bg-thunder-900 text-primary-500 dark:text-primary-400 hover:bg-primary-50 dark:hover:bg-thunder-800">
               Nous Contacter
             </Link>
           </div>
