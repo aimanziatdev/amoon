@@ -14,9 +14,9 @@ export interface Product {
 export const products: Product[] = [
   {
     id: '1',
-    name: 'Thunder T-shirt Black',
+    name: 'TT Black',
     description: 'T-shirt Thunder en coton premium noir avec le logo Amoon. Confortable et élégant pour un usage quotidien.',
-    price: 149,
+    price: 29.99,
     image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500&h=600&fit=crop',
     images: [
       'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500&h=600&fit=crop',
@@ -33,9 +33,9 @@ export const products: Product[] = [
   },
   {
     id: '3',
-    name: 'Thunder T-shirt White',
+    name: 'TT White',
     description: 'T-shirt Thunder blanc avec design unique Amoon. Parfait pour faire une déclaration de style.',
-    price: 149,
+    price: 34.99,
     image: 'https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=500&h=600&fit=crop',
     images: [
       'https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=500&h=600&fit=crop',
@@ -52,9 +52,9 @@ export const products: Product[] = [
   },
   {
     id: '5',
-    name: 'Thunder T-shirt Gris',
+    name: 'TT Gris',
     description: 'T-shirt Thunder gris avec branding Amoon rétro. Look classique avec confort moderne.',
-    price: 189,
+    price: 27.99,
     image: 'https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?w=500&h=600&fit=crop',
     images: [
       'https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?w=500&h=600&fit=crop',
@@ -73,7 +73,7 @@ export const products: Product[] = [
     id: '2',
     name: 'Hoodie Blue Jean',
     description: 'Hoodie confortable parfait pour les jours plus frais. Fabriqué avec des matériaux premium et le logo Amoon.',
-    price: 299,
+    price: 59.99,
     image: 'https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=500&h=600&fit=crop',
     images: [
       'https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=500&h=600&fit=crop',
@@ -92,7 +92,7 @@ export const products: Product[] = [
     id: '4',
     name: 'Hoodie Blue Denim',
     description: 'Hoodie léger en denim bleu pour un style actif. Respirant et confortable pour tous les jours.',
-    price: 299,
+    price: 49.99,
     image: 'https://images.unsplash.com/photo-1544022613-e87ca75a784a?w=500&h=600&fit=crop',
     images: [
       'https://images.unsplash.com/photo-1544022613-e87ca75a784a?w=500&h=600&fit=crop',
