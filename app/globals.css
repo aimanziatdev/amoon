@@ -7,20 +7,42 @@
 @layer base {
   html {
     font-family: 'Inter', sans-serif;
+    /* Improve mobile scrolling */
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
   }
   
   body {
     @apply transition-colors duration-200;
+    /* Prevent horizontal scroll on mobile */
+    overflow-x: hidden;
+  }
+
+  /* Better touch targets for mobile */
+  button, a, input, select, textarea {
+    @apply touch-manipulation;
+  }
+
+  /* Improve text rendering on mobile */
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply bg-primary-500 hover:bg-primary-600 text-white font-medium py-2 px-4 rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105;
+    @apply bg-primary-500 hover:bg-primary-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105;
+    /* Mobile optimizations */
+    @apply sm:py-2 sm:px-4;
+    min-height: 44px; /* Better touch target */
   }
   
   .btn-secondary {
-    @apply bg-thunder-200 hover:bg-thunder-300 dark:bg-thunder-700 dark:hover:bg-thunder-600 text-thunder-900 dark:text-white font-medium py-2 px-4 rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105;
+    @apply bg-thunder-200 hover:bg-thunder-300 dark:bg-thunder-700 dark:hover:bg-thunder-600 text-thunder-900 dark:text-white font-medium py-3 px-6 rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105;
+    /* Mobile optimizations */
+    @apply sm:py-2 sm:px-4;
+    min-height: 44px; /* Better touch target */
   }
   
   .card {
@@ -28,7 +50,10 @@
   }
   
   .input-field {
-    @apply w-full px-4 py-2 border border-thunder-300 dark:border-thunder-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-thunder-700 text-thunder-900 dark:text-white transition-all duration-200;
+    @apply w-full px-4 py-3 border border-thunder-300 dark:border-thunder-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-thunder-700 text-thunder-900 dark:text-white transition-all duration-200;
+    /* Mobile optimizations */
+    @apply sm:py-2;
+    min-height: 44px; /* Better touch target */
   }
 
   .thunder-gradient {
@@ -49,6 +74,39 @@
 
   .thunder-hover {
     @apply hover:shadow-xl hover:shadow-primary-500/40 transition-all duration-300;
+  }
+
+  /* Mobile-specific utilities */
+  .mobile-container {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+
+  .mobile-text {
+    @apply text-sm sm:text-base;
+  }
+
+  .mobile-heading {
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl;
+  }
+
+  .mobile-subheading {
+    @apply text-lg sm:text-xl md:text-2xl;
+  }
+
+  .mobile-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
+  }
+
+  .mobile-gap {
+    @apply gap-4 sm:gap-6 lg:gap-8;
+  }
+
+  .mobile-padding {
+    @apply py-8 sm:py-12 lg:py-16;
+  }
+
+  .mobile-margin {
+    @apply my-4 sm:my-6 lg:my-8;
   }
 }
 
@@ -94,4 +152,43 @@
 .scrollbar-hide {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
+}
+
+/* Mobile-specific responsive improvements */
+@media (max-width: 640px) {
+  /* Improve touch targets */
+  button, a, input, select, textarea {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Better spacing for mobile */
+  .mobile-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Improve text readability on small screens */
+  body {
+    font-size: 16px; /* Prevent zoom on iOS */
+  }
+
+  /* Better grid layouts for mobile */
+  .mobile-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Optimize images for mobile */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Tablet optimizations */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .mobile-container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
 } 

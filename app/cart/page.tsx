@@ -31,20 +31,20 @@ export default function Cart() {
     return (
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
         <Header />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <div className="mobile-container max-w-7xl mx-auto py-16 sm:py-24">
           <div className="text-center">
-            <div className="w-24 h-24 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-6">
-              <MessageCircle className="w-12 h-12 text-gray-400" />
+            <div className="w-16 h-16 sm:w-24 sm:h-24 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
+              <MessageCircle className="w-8 h-8 sm:w-12 sm:h-12 text-gray-400" />
             </div>
-            <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+            <h1 className="mobile-heading font-bold text-gray-900 dark:text-white mb-4">
               Votre panier est vide
             </h1>
-            <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
+            <p className="mobile-subheading text-gray-600 dark:text-gray-400 mb-6 sm:mb-8">
               Il semble que vous n'ayez pas encore ajouté d'articles à votre panier.
             </p>
             <a
               href="/collections"
-              className="btn-primary text-lg px-8 py-3"
+              className="btn-primary mobile-subheading px-6 sm:px-8 py-3 w-full sm:w-auto max-w-xs"
             >
               Commencer les Achats
             </a>
@@ -58,25 +58,25 @@ export default function Cart() {
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       <Header />
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">
+      <div className="mobile-container max-w-7xl mx-auto py-8 sm:py-12">
+        <h1 className="mobile-heading font-bold text-gray-900 dark:text-white mb-6 sm:mb-8">
           Panier d'Achat
         </h1>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
           {/* Cart Items */}
           <div className="lg:col-span-2">
             <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
-              <div className="p-6">
-                <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-6">
+              <div className="p-4 sm:p-6">
+                <h2 className="mobile-subheading font-semibold text-gray-900 dark:text-white mb-4 sm:mb-6">
                   Articles du Panier ({items.length})
                 </h2>
                 
-                <div className="space-y-6">
+                <div className="space-y-4 sm:space-y-6">
                   {items.map((item, index) => (
-                    <div key={`${item.id}-${item.size}-${index}`} className="flex flex-col sm:flex-row sm:items-center sm:space-x-4 space-y-2 sm:space-y-0 p-3 sm:p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                    <div key={`${item.id}-${item.size}-${index}`} className="flex flex-col sm:flex-row sm:items-center sm:space-x-4 space-y-3 sm:space-y-0 p-3 sm:p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
                       {/* Product Image */}
-                      <div className="relative w-24 h-24 sm:w-20 sm:h-20 flex-shrink-0 rounded-md overflow-hidden mx-auto sm:mx-0">
+                      <div className="relative w-20 h-20 sm:w-24 sm:h-24 flex-shrink-0 rounded-md overflow-hidden mx-auto sm:mx-0">
                         <img 
                           src={item.image} 
                           alt={item.name}
@@ -86,13 +86,13 @@ export default function Cart() {
 
                       {/* Product Details */}
                       <div className="flex-1 min-w-0 text-center sm:text-left">
-                        <h3 className="text-lg font-medium text-gray-900 dark:text-white">
+                        <h3 className="mobile-text font-medium text-gray-900 dark:text-white">
                           {item.name}
                         </h3>
-                        <p className="text-sm text-gray-600 dark:text-gray-400">
+                        <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
                           Taille : {item.size}
                         </p>
-                        <p className="text-lg font-semibold text-primary-600">
+                        <p className="mobile-text font-semibold text-primary-600">
                           {item.price.toFixed(2)} DH
                         </p>
                       </div>
@@ -101,16 +101,16 @@ export default function Cart() {
                       <div className="flex items-center justify-center space-x-2">
                         <button
                           onClick={() => updateQuantity(item.id, item.size, item.quantity - 1)}
-                          className="w-8 h-8 rounded-md border border-gray-300 dark:border-gray-600 flex items-center justify-center hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors"
+                          className="w-10 h-10 sm:w-8 sm:h-8 rounded-md border border-gray-300 dark:border-gray-600 flex items-center justify-center hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors min-w-[40px] min-h-[40px]"
                         >
                           <Minus className="w-4 h-4" />
                         </button>
-                        <span className="w-12 text-center text-gray-900 dark:text-white font-medium">
+                        <span className="w-12 text-center text-gray-900 dark:text-white font-medium mobile-text">
                           {item.quantity}
                         </span>
                         <button
                           onClick={() => updateQuantity(item.id, item.size, item.quantity + 1)}
-                          className="w-8 h-8 rounded-md border border-gray-300 dark:border-gray-600 flex items-center justify-center hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors"
+                          className="w-10 h-10 sm:w-8 sm:h-8 rounded-md border border-gray-300 dark:border-gray-600 flex items-center justify-center hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors min-w-[40px] min-h-[40px]"
                         >
                           <Plus className="w-4 h-4" />
                         </button>
@@ -118,7 +118,7 @@ export default function Cart() {
 
                       {/* Item Total */}
                       <div className="text-center sm:text-right">
-                        <p className="text-lg font-bold text-primary-600">
+                        <p className="mobile-text font-bold text-primary-600">
                           {(item.price * item.quantity).toFixed(2)} DH
                         </p>
                       </div>
@@ -126,7 +126,7 @@ export default function Cart() {
                       {/* Remove Button */}
                       <button
                         onClick={() => removeFromCart(item.id, item.size)}
-                        className="p-2 text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-md transition-colors duration-200 mx-auto sm:mx-0"
+                        className="p-2 text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-md transition-colors duration-200 mx-auto sm:mx-0 min-w-[44px] min-h-[44px] flex items-center justify-center"
                       >
                         <Trash2 className="w-5 h-5" />
                       </button>
@@ -135,10 +135,10 @@ export default function Cart() {
                 </div>
 
                 {/* Clear Cart Button */}
-                <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-600">
+                <div className="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-gray-200 dark:border-gray-600">
                   <button
                     onClick={clearCart}
-                    className="text-red-600 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300 font-medium transition-colors"
+                    className="text-red-600 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300 font-medium transition-colors mobile-text"
                   >
                     Vider le Panier
                   </button>
@@ -149,62 +149,62 @@ export default function Cart() {
 
           {/* Order Summary */}
           <div className="lg:col-span-1">
-            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6 sticky top-24">
-              <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-6">
+            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-4 sm:p-6 sticky top-24">
+              <h2 className="mobile-subheading font-semibold text-gray-900 dark:text-white mb-4 sm:mb-6">
                 Résumé de la Commande
               </h2>
 
               <div className="space-y-4 mb-6">
                 {/* Name Input */}
                 <div>
-                  <label className="block text-gray-700 dark:text-gray-300 mb-1" htmlFor="name">Nom</label>
+                  <label className="block text-gray-700 dark:text-gray-300 mb-1 mobile-text" htmlFor="name">Nom</label>
                   <input
                     id="name"
                     type="text"
                     value={name}
                     onChange={e => setName(e.target.value)}
-                    className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 dark:bg-gray-900 dark:text-white"
+                    className="w-full px-3 py-3 sm:py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 dark:bg-gray-900 dark:text-white mobile-text min-h-[44px]"
                     placeholder="Votre nom"
                   />
                 </div>
                 {/* City Input */}
                 <div>
-                  <label className="block text-gray-700 dark:text-gray-300 mb-1" htmlFor="city">Ville</label>
+                  <label className="block text-gray-700 dark:text-gray-300 mb-1 mobile-text" htmlFor="city">Ville</label>
                   <input
                     id="city"
                     type="text"
                     value={city}
                     onChange={e => setCity(e.target.value)}
-                    className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 dark:bg-gray-900 dark:text-white"
+                    className="w-full px-3 py-3 sm:py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 dark:bg-gray-900 dark:text-white mobile-text min-h-[44px]"
                     placeholder="Votre ville"
                   />
                 </div>
                 {/* Phone Input */}
                 <div>
-                  <label className="block text-gray-700 dark:text-gray-300 mb-1" htmlFor="phone">Numéro de téléphone</label>
+                  <label className="block text-gray-700 dark:text-gray-300 mb-1 mobile-text" htmlFor="phone">Numéro de téléphone</label>
                   <input
                     id="phone"
                     type="tel"
                     value={phone}
                     onChange={e => setPhone(e.target.value)}
-                    className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 dark:bg-gray-900 dark:text-white"
+                    className="w-full px-3 py-3 sm:py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 dark:bg-gray-900 dark:text-white mobile-text min-h-[44px]"
                     placeholder="Votre numéro de téléphone"
                   />
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-gray-600 dark:text-gray-400">Sous-total</span>
-                  <span className="text-gray-900 dark:text-white font-medium">
+                  <span className="mobile-text text-gray-600 dark:text-gray-400">Sous-total</span>
+                  <span className="mobile-text text-gray-900 dark:text-white font-medium">
                     {totalPrice.toFixed(2)} DH
                   </span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-gray-600 dark:text-gray-400">Livraison</span>
-                  <span className="text-green-600 font-medium">Gratuite</span>
+                  <span className="mobile-text text-gray-600 dark:text-gray-400">Livraison</span>
+                  <span className="text-green-600 font-medium mobile-text">Gratuite</span>
                 </div>
                 <div className="border-t border-gray-200 dark:border-gray-600 pt-4">
                   <div className="flex justify-between">
-                    <span className="text-lg font-semibold text-gray-900 dark:text-white">Total</span>
-                    <span className="text-lg font-bold text-primary-600">
+                    <span className="mobile-subheading font-semibold text-gray-900 dark:text-white">Total</span>
+                    <span className="mobile-subheading font-bold text-primary-600">
                       {totalPrice.toFixed(2)} DH
                     </span>
                   </div>
@@ -213,35 +213,35 @@ export default function Cart() {
 
               {/* WhatsApp Order Button */}
               {error && (
-                <div className="mb-4 text-red-600 bg-red-50 dark:bg-red-900/30 p-2 rounded">
+                <div className="mb-4 text-red-600 bg-red-50 dark:bg-red-900/30 p-3 rounded mobile-text">
                   {error}
                 </div>
               )}
               <button
                 onClick={handleWhatsAppOrder}
-                className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2"
+                className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2 min-h-[44px]"
               >
                 <MessageCircle className="w-5 h-5" />
-                <span>Commander via WhatsApp</span>
+                <span className="mobile-text">Commander via WhatsApp</span>
               </button>
 
-              <p className="text-sm text-gray-600 dark:text-gray-400 mt-4 text-center">
+              <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mt-4 text-center">
                 Cliquez pour envoyer les détails de votre commande à notre numéro WhatsApp
               </p>
 
               {/* Contact Info */}
               <div className="mt-6 p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
-                <h3 className="font-medium text-gray-900 dark:text-white mb-2">
+                <h3 className="font-medium text-gray-900 dark:text-white mb-2 mobile-text">
                   Besoin d'Aide ?
                 </h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
+                <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mb-2">
                   Contactez-nous sur WhatsApp :
                 </p>
                 <a
                   href="https://wa.me/212634889422"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary-600 hover:text-primary-700 font-medium"
+                  className="text-primary-600 hover:text-primary-700 font-medium mobile-text"
                 >
                   +212 634889422
                 </a>

@@ -20,25 +20,25 @@ export function Header() {
 
   return (
     <header className="bg-black shadow-lg border-b border-gray-800 sticky top-0 z-50 thunder-glow">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+      <div className="mobile-container max-w-7xl mx-auto">
+        <div className="flex justify-between items-center h-16 sm:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3 thunder-hover group">
+          <Link href="/" className="flex items-center space-x-2 sm:space-x-3 thunder-hover group">
             {/* Brand name only, no thunder icon */}
             <div className="flex flex-col">
-              <span className="text-xl font-bold tracking-wider text-white">
+              <span className="text-lg sm:text-xl font-bold tracking-wider text-white">
                 a-moon.
               </span>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex space-x-6 lg:space-x-8">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-gray-300 hover:text-primary-500 transition-all duration-200 font-medium hover:scale-105"
+                className="text-gray-300 hover:text-primary-500 transition-all duration-200 font-medium hover:scale-105 text-sm lg:text-base"
               >
                 {item.name}
               </Link>
@@ -46,11 +46,11 @@ export function Header() {
           </nav>
 
           {/* Right side icons */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-2 sm:space-x-4">
             {/* Theme Toggle */}
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-lg bg-gray-800 hover:bg-gray-700 transition-all duration-200 thunder-hover"
+              className="p-2 sm:p-3 rounded-lg bg-gray-800 hover:bg-gray-700 transition-all duration-200 thunder-hover min-w-[44px] min-h-[44px] flex items-center justify-center"
               aria-label="Basculer le thème"
             >
               {theme === 'light' ? (
@@ -63,7 +63,7 @@ export function Header() {
             {/* Cart */}
             <Link
               href="/cart"
-              className="relative p-2 rounded-lg bg-gray-800 hover:bg-gray-700 transition-all duration-200 thunder-hover"
+              className="relative p-2 sm:p-3 rounded-lg bg-gray-800 hover:bg-gray-700 transition-all duration-200 thunder-hover min-w-[44px] min-h-[44px] flex items-center justify-center"
             >
               <ShoppingCart className="w-5 h-5 text-gray-300" />
               {totalItems > 0 && (
@@ -76,7 +76,8 @@ export function Header() {
             {/* Mobile menu button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden p-2 rounded-lg bg-gray-800 hover:bg-gray-700 transition-all duration-200 thunder-hover"
+              className="md:hidden p-2 sm:p-3 rounded-lg bg-gray-800 hover:bg-gray-700 transition-all duration-200 thunder-hover min-w-[44px] min-h-[44px] flex items-center justify-center"
+              aria-label="Menu"
             >
               {isMenuOpen ? (
                 <X className="w-5 h-5 text-gray-300" />
@@ -89,13 +90,13 @@ export function Header() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-gray-800">
+          <div className="md:hidden py-4 border-t border-gray-800 bg-black">
             <nav className="flex flex-col space-y-4">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-gray-300 hover:text-primary-500 transition-all duration-200 font-medium"
+                  className="text-gray-300 hover:text-primary-500 transition-all duration-200 font-medium py-3 px-4 rounded-lg hover:bg-gray-800 text-base"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
