@@ -23,10 +23,10 @@ export const products: Product[] = [
     originalPrice: 199, // Prix original
     discountPercentage: 35, // 35% de remise
     rating: 5, // Note du produit
-    image: '/images/products/blanc%20tshirt.jpg',
+    image: '/images/products/blanc-tshirt.jpg',
     images: [
-      '/images/products/blanc%20tshirt.jpg',
-      '/images/products/blanc%20tshirt%202.jpg',
+      '/images/products/blanc-tshirt.jpg',
+      '/images/products/blanc-tshirt-2.jpg',
     ],
     category: 'T-Shirts',
     sizes: ['M', 'L', 'XL'],
@@ -41,12 +41,12 @@ export const products: Product[] = [
     originalPrice: 179, // Prix original
     discountPercentage: 28, // 28% de remise
     rating: 4.9, // Note du produit
-    image: '/images/products/black%20tshirt%203.jpg',
+    image: '/images/products/black-tshirt-3.jpg',
     images: [
-      '/images/products/black%20tshirt%203.jpg',
-      '/images/products/black%20tshirt.jpg',
-      '/images/products/black%20tshirt%202.jpg',
-      '/images/products/black%20tshirt%204.jpg',
+      '/images/products/black-tshirt-3.jpg',
+      '/images/products/black-tshirt.jpg',
+      '/images/products/black-tshirt-2.jpg',
+      '/images/products/black-tshirt-4.jpg',
     ],
     category: 'T-Shirts',
     sizes: ['M', 'L', 'XL'],
