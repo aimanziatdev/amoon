@@ -14,8 +14,21 @@ export default function Cart() {
 
   const handleWhatsAppOrder = () => {
     if (items.length === 0) return
-    if (!name || !city || !phone) {
-      setError('Veuillez remplir votre nom, ville et numéro de téléphone.')
+    if (!phone) {
+      setError('Le numéro de téléphone est obligatoire pour passer votre commande.')
+      return
+    }
+    
+    // Validation du numéro de téléphone marocain
+    const phoneRegex = /^(\+212|212)?[0-9]{9}$|^(06|07)[0-9]{8}$/
+    const cleanPhone = phone.replace(/\s/g, '')
+    if (!phoneRegex.test(cleanPhone)) {
+      setError('Veuillez entrer un numéro de téléphone marocain valide (ex: +212600000000, 0600000000 ou 07 0000000000)')
+      return
+    }
+    
+    if (!name || !city) {
+      setError('Veuillez remplir votre nom et ville.')
       return
     }
     setError('')
@@ -181,14 +194,17 @@ export default function Cart() {
                 </div>
                 {/* Phone Input */}
                 <div>
-                  <label className="block text-gray-700 dark:text-gray-300 mb-1 mobile-text" htmlFor="phone">Numéro de téléphone</label>
+                  <label className="block text-gray-700 dark:text-gray-300 mb-1 mobile-text" htmlFor="phone">
+                    Numéro de téléphone <span className="text-red-500">*</span>
+                  </label>
                   <input
                     id="phone"
                     type="tel"
+                    required
                     value={phone}
                     onChange={e => setPhone(e.target.value)}
                     className="w-full px-3 py-3 sm:py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 dark:bg-gray-900 dark:text-white mobile-text min-h-[44px]"
-                    placeholder="Votre numéro de téléphone"
+                    placeholder="Votre numéro de téléphone (obligatoire)"
                   />
                 </div>
                 <div className="flex justify-between">
@@ -222,7 +238,7 @@ export default function Cart() {
                 className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2 min-h-[44px]"
               >
                 <MessageCircle className="w-5 h-5" />
-                <span className="mobile-text">Commander via WhatsApp</span>
+                <span className="mobile-text">Commander</span>
               </button>
 
               <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mt-4 text-center">

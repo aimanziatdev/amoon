@@ -13,7 +13,7 @@ export interface CartItem {
 
 interface CartContextType {
   items: CartItem[]
-  addToCart: (item: Omit<CartItem, 'quantity'>) => void
+  addToCart: (item: CartItem) => void
   removeFromCart: (id: string, size: string) => void
   updateQuantity: (id: string, size: string, quantity: number) => void
   clearCart: () => void
@@ -37,7 +37,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     localStorage.setItem('cart', JSON.stringify(items))
   }, [items])
 
-  const addToCart = (newItem: Omit<CartItem, 'quantity'>) => {
+  const addToCart = (newItem: CartItem) => {
     setItems(prevItems => {
       const existingItemIndex = prevItems.findIndex(
         item => item.id === newItem.id && item.size === newItem.size
@@ -45,10 +45,10 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
 
       if (existingItemIndex > -1) {
         const updatedItems = [...prevItems]
-        updatedItems[existingItemIndex].quantity += 1
+        updatedItems[existingItemIndex].quantity += newItem.quantity
         return updatedItems
       } else {
-        return [...prevItems, { ...newItem, quantity: 1 }]
+        return [...prevItems, newItem]
       }
     })
   }

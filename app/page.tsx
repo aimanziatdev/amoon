@@ -9,42 +9,170 @@ export default function Home() {
 
   return (
     <div className="min-h-screen thunder-bg">
-      <Header />
+      {/* Info Banner - Above Header */}
+      <section className="bg-primary-600 text-white py-3 overflow-hidden">
+        <div className="animate-marquee whitespace-nowrap">
+          <div className="flex items-center justify-center space-x-8 text-center">
+            <div className="flex items-center space-x-2">
+              <Truck className="w-5 h-5" />
+              <span className="mobile-text font-medium">Livraison Gratuite</span>
+            </div>
+            <div className="w-px h-6 bg-white/30"></div>
+            <div className="flex items-center space-x-2">
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+              <span className="mobile-text font-medium">Coton 100%</span>
+            </div>
+            <div className="w-px h-6 bg-white/30"></div>
+            <div className="flex items-center space-x-2">
+              <Truck className="w-5 h-5" />
+              <span className="mobile-text font-medium">Livraison Gratuite</span>
+            </div>
+            <div className="w-px h-6 bg-white/30"></div>
+            <div className="flex items-center space-x-2">
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+              <span className="mobile-text font-medium">Coton 100%</span>
+            </div>
+            <div className="w-px h-6 bg-white/30"></div>
+            <div className="flex items-center space-x-2">
+              <Truck className="w-5 h-5" />
+              <span className="mobile-text font-medium">Livraison Gratuite</span>
+            </div>
+            <div className="w-px h-6 bg-white/30"></div>
+            <div className="flex items-center space-x-2">
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+              <span className="mobile-text font-medium">Coton 100%</span>
+            </div>
+            <div className="w-px h-6 bg-white/30"></div>
+            <div className="flex items-center space-x-2">
+              <Truck className="w-5 h-5" />
+              <span className="mobile-text font-medium">Livraison Gratuite</span>
+            </div>
+            <div className="w-px h-6 bg-white/30"></div>
+            <div className="flex items-center space-x-2">
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+              <span className="mobile-text font-medium">Coton 100%</span>
+            </div>
+            <div className="w-px h-6 bg-white/30"></div>
+            <div className="flex items-center space-x-2">
+              <Truck className="w-5 h-5" />
+              <span className="mobile-text font-medium">Livraison Gratuite</span>
+            </div>
+            <div className="w-px h-6 bg-white/30"></div>
+            <div className="flex items-center space-x-2">
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+              <span className="mobile-text font-medium">Coton 100%</span>
+            </div>
+            <div className="w-px h-6 bg-white/30"></div>
+            <div className="flex items-center space-x-2">
+              <Truck className="w-5 h-5" />
+              <span className="mobile-text font-medium">Livraison Gratuite</span>
+            </div>
+            <div className="w-px h-6 bg-white/30"></div>
+            <div className="flex items-center space-x-2">
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+              <span className="mobile-text font-medium">Coton 100%</span>
+            </div>
+            <div className="w-px h-6 bg-white/30"></div>
+            <div className="flex items-center space-x-2">
+              <Truck className="w-5 h-5" />
+              <span className="mobile-text font-medium">Livraison Gratuite</span>
+            </div>
+            <div className="w-px h-6 bg-white/30"></div>
+            <div className="flex items-center space-x-2">
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+              <span className="mobile-text font-medium">Coton 100%</span>
+            </div>
+            <div className="w-px h-6 bg-white/30"></div>
+            <div className="flex items-center space-x-2">
+              <Truck className="w-5 h-5" />
+              <span className="mobile-text font-medium">Livraison Gratuite</span>
+            </div>
+            <div className="w-px h-6 bg-white/30"></div>
+            <div className="flex items-center space-x-2">
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+              <span className="mobile-text font-medium">Coton 100%</span>
+            </div>
+            <div className="w-px h-6 bg-white/30"></div>
+            <div className="flex items-center space-x-2">
+              <Truck className="w-5 h-5" />
+              <span className="mobile-text font-medium">Livraison Gratuite</span>
+            </div>
+            <div className="w-px h-6 bg-white/30"></div>
+            <div className="flex items-center space-x-2">
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+              <span className="mobile-text font-medium">Coton 100%</span>
+            </div>
+            <div className="w-px h-6 bg-white/30"></div>
+            <div className="flex items-center space-x-2">
+              <Truck className="w-5 h-5" />
+              <span className="mobile-text font-medium">Livraison Gratuite</span>
+            </div>
+            <div className="w-px h-6 bg-white/30"></div>
+            <div className="flex items-center space-x-2">
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+              <span className="mobile-text font-medium">Coton 100%</span>
+            </div>
+            <div className="w-px h-6 bg-white/30"></div>
+            <div className="flex items-center space-x-2">
+              <Truck className="w-5 h-5" />
+              <span className="mobile-text font-medium">Livraison Gratuite</span>
+            </div>
+            <div className="w-px h-6 bg-white/30"></div>
+            <div className="flex items-center space-x-2">
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+              <span className="mobile-text font-medium">Coton 100%</span>
+            </div>
+            <div className="w-px h-6 bg-white/30"></div>
+            <div className="flex items-center space-x-2">
+              <Truck className="w-5 h-5" />
+              <span className="mobile-text font-medium">Livraison Gratuite</span>
+            </div>
+            <div className="w-px h-6 bg-white/30"></div>
+            <div className="flex items-center space-x-2">
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+              <span className="mobile-text font-medium">Coton 100%</span>
+            </div>
+          </div>
+        </div>
+      </section>
       
-      {/* Featured Products */}
+            <Header />
+      
+      {/* Products Section */}
       <section className="mobile-padding bg-white dark:bg-thunder-800">
         <div className="mobile-container max-w-7xl mx-auto">
-          <div className="text-center mb-8 sm:mb-12">
-            <div className="lightning-flash mb-4">
-              <Zap className="w-8 h-8 sm:w-12 sm:h-12 text-primary-400 mx-auto" />
-            </div>
-            <h2 className="mobile-heading font-bold text-thunder-900 dark:text-white mb-4">
-              Produits <span className="thunder-text">Vedettes</span>
-            </h2>
-            <p className="mobile-subheading text-thunder-600 dark:text-primary-100 max-w-2xl mx-auto px-4">
-              Découvrez nos articles les plus populaires, soigneusement sélectionnés pour la qualité et le style
-            </p>
-          </div>
-          
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 sm:gap-8">
             {featuredProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
           </div>
-          
-          <div className="text-center mt-8 sm:mt-12 flex flex-col items-center justify-center">
-            <Link href="/collections" className="btn-primary thunder-glow w-full sm:w-auto max-w-xs">
-              Voir Tous les Produits
-            </Link>
-            <div className="mt-3 animate-bounce">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary-500 mx-auto">
-                <path d="M12 5v14M19 12l-7 7-7-7" />
-              </svg>
-            </div>
-          </div>
         </div>
       </section>
-
+  
       {/* Features Section */}
       <section className="mobile-padding bg-white dark:bg-thunder-800">
         <div className="mobile-container max-w-7xl mx-auto">

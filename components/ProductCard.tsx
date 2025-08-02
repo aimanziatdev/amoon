@@ -46,6 +46,7 @@ export function ProductCard({ product }: ProductCardProps) {
       price: product.price,
       image: product.image,
       size: selectedSize,
+      quantity: quantity,
     })
     
     // Show notification animation
